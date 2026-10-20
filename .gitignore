@@ -1,0 +1,15 @@
+
+# Local environment secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and generated files
+node_modules/
+dist/
+.netlify/
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.vscode/

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>XSR 155 — Owner dashboard</title>
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin">
+
+<!-- Login -->
+<main class="login" id="login" hidden>
+  <form class="card" id="login-form" novalidate>
+    <h1>Owner<br>sign in</h1>
+    <p>Private area. Access is enforced by the database, not by this page.</p>
+    <div class="a-fld"><label for="em">Email</label><input class="a-in" id="em" type="email" autocomplete="username" required></div>
+    <div class="a-fld"><label for="pw">Password</label><input class="a-in" id="pw" type="password" autocomplete="current-password" required></div>
+    <div class="err" id="login-err" role="alert"></div>
+    <button class="btn red" type="submit" id="login-btn" style="width:100%">Sign in</button>
+  </form>
+</main>
+
+<!-- App -->
+<div class="shell" id="app" hidden>
+  <aside class="side">
+    <div class="brand">XSR<i>155</i> · Owner</div>
+    <nav aria-label="Dashboard sections" id="side-nav">
+      <button data-view="overview" aria-current="page">Overview</button>
+      <button data-view="feedback">Feedback <span class="pill" data-pill="feedback" data-n="0"></span></button>
+      <button data-view="reviews">Reviews <span class="pill" data-pill="reviews" data-n="0"></span></button>
+      <button data-view="inquiries">Inquiries <span class="pill" data-pill="inquiries" data-n="0"></span></button>
+      <button data-view="rides">Test rides <span class="pill" data-pill="rides" data-n="0"></span></button>
+    </nav>
+    <div class="foot"><div id="who"></div><button class="btn ghost sm" id="logout" style="margin-top:10px">Sign out</button></div>
+  </aside>
+  <main class="main" id="main" tabindex="-1"></main>
+</div>
+
+<dialog class="panel" id="detail" aria-labelledby="d-title">
+  <header><h3 id="d-title">Details</h3><button class="btn ghost sm" id="d-close" aria-label="Close details">Close</button></header>
+  <div class="body" id="d-body"></div>
+  <div class="acts" id="d-acts"></div>
+</dialog>
+
+<dialog class="confirm" id="confirm" aria-labelledby="c-title">
+  <h3 id="c-title">Are you sure?</h3>
+  <p id="c-text" style="margin:0;color:var(--stone)"></p>
+  <div class="acts"><button class="btn ghost" id="c-no">Cancel</button><button class="btn red" id="c-yes">Delete</button></div>
+</dialog>
+
+<script src="../js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>
